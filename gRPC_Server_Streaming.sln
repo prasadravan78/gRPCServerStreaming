@@ -3,7 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protobuf", "Protobuf", "{8EE094A0-B32D-4C59-8CC1-C51D9FD86088}"
+	ProjectSection(SolutionItems) = preProject
+		ServerStreaming.proto = ServerStreaming.proto
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC_Server_Streaming_Server", "gRPC_Server_Streaming_Server\gRPC_Server_Streaming_Server.csproj", "{EDB4DB6B-E929-4AB8-B44E-F98B6DFAB6C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPC_Server_Streaming_Client", "gRPC_Server_Streaming_Client\gRPC_Server_Streaming_Client.csproj", "{C0792DB5-D3F1-4CF6-ADBA-A18C39E5DD75}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDB4DB6B-E929-4AB8-B44E-F98B6DFAB6C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB4DB6B-E929-4AB8-B44E-F98B6DFAB6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB4DB6B-E929-4AB8-B44E-F98B6DFAB6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB4DB6B-E929-4AB8-B44E-F98B6DFAB6C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0792DB5-D3F1-4CF6-ADBA-A18C39E5DD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0792DB5-D3F1-4CF6-ADBA-A18C39E5DD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0792DB5-D3F1-4CF6-ADBA-A18C39E5DD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0792DB5-D3F1-4CF6-ADBA-A18C39E5DD75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

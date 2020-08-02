@@ -1,0 +1,2 @@
+Models/ServerStreaming.cs \
+Models/ServerStreamingGrpc.cs: ../ServerStreaming.proto

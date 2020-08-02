@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ServerStream;
+
+message ServerStream
+{
+
+}
+
+message ServerStreamingRequest
+{
+	ServerStream stream=1;
+}
+
+message ServerStreamingResponse
+{
+
+}
+
+service ServerStreamingService
+{
+	rpc ServerStream (ServerStreamingRequest) returns (ServerStreamingResponse) {}
+}
