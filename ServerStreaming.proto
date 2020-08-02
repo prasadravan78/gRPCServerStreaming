@@ -2,22 +2,23 @@ syntax = "proto3";
 
 package ServerStream;
 
-message ServerStream
+message ServerStreamMsg
 {
-
+	string FirstName = 1;
+	string LastName = 2;
 }
 
 message ServerStreamingRequest
 {
-	ServerStream stream=1;
+	ServerStreamMsg stream=1;
 }
 
 message ServerStreamingResponse
 {
-
+	string ServerResponse=1;
 }
 
 service ServerStreamingService
 {
-	rpc ServerStream (ServerStreamingRequest) returns (ServerStreamingResponse) {}
+	rpc ServerStream (ServerStreamingRequest) returns (stream ServerStreamingResponse) {}
 }

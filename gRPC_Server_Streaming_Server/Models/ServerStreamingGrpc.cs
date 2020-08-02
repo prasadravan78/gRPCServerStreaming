@@ -16,7 +16,7 @@ namespace ServerStream {
     static readonly grpc::Marshaller<global::ServerStream.ServerStreamingResponse> __Marshaller_ServerStream_ServerStreamingResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::ServerStream.ServerStreamingResponse.Parser.ParseFrom);
 
     static readonly grpc::Method<global::ServerStream.ServerStreamingRequest, global::ServerStream.ServerStreamingResponse> __Method_ServerStream = new grpc::Method<global::ServerStream.ServerStreamingRequest, global::ServerStream.ServerStreamingResponse>(
-        grpc::MethodType.Unary,
+        grpc::MethodType.ServerStreaming,
         __ServiceName,
         "ServerStream",
         __Marshaller_ServerStream_ServerStreamingRequest,
@@ -32,7 +32,7 @@ namespace ServerStream {
     [grpc::BindServiceMethod(typeof(ServerStreamingService), "BindService")]
     public abstract partial class ServerStreamingServiceBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::ServerStream.ServerStreamingResponse> ServerStream(global::ServerStream.ServerStreamingRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task ServerStream(global::ServerStream.ServerStreamingRequest request, grpc::IServerStreamWriter<global::ServerStream.ServerStreamingResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -62,21 +62,13 @@ namespace ServerStream {
       {
       }
 
-      public virtual global::ServerStream.ServerStreamingResponse ServerStream(global::ServerStream.ServerStreamingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncServerStreamingCall<global::ServerStream.ServerStreamingResponse> ServerStream(global::ServerStream.ServerStreamingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ServerStream(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::ServerStream.ServerStreamingResponse ServerStream(global::ServerStream.ServerStreamingRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncServerStreamingCall<global::ServerStream.ServerStreamingResponse> ServerStream(global::ServerStream.ServerStreamingRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_ServerStream, null, options, request);
-      }
-      public virtual grpc::AsyncUnaryCall<global::ServerStream.ServerStreamingResponse> ServerStreamAsync(global::ServerStream.ServerStreamingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return ServerStreamAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncUnaryCall<global::ServerStream.ServerStreamingResponse> ServerStreamAsync(global::ServerStream.ServerStreamingRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_ServerStream, null, options, request);
+        return CallInvoker.AsyncServerStreamingCall(__Method_ServerStream, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override ServerStreamingServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -99,7 +91,7 @@ namespace ServerStream {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ServerStreamingServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_ServerStream, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ServerStream.ServerStreamingRequest, global::ServerStream.ServerStreamingResponse>(serviceImpl.ServerStream));
+      serviceBinder.AddMethod(__Method_ServerStream, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::ServerStream.ServerStreamingRequest, global::ServerStream.ServerStreamingResponse>(serviceImpl.ServerStream));
     }
 
   }

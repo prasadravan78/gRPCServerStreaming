@@ -24,30 +24,31 @@ namespace ServerStream {
     static ServerStreamingReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVTZXJ2ZXJTdHJlYW1pbmcucHJvdG8SDFNlcnZlclN0cmVhbSIOCgxTZXJ2",
-            "ZXJTdHJlYW0iRAoWU2VydmVyU3RyZWFtaW5nUmVxdWVzdBIqCgZzdHJlYW0Y",
-            "ASABKAsyGi5TZXJ2ZXJTdHJlYW0uU2VydmVyU3RyZWFtIhkKF1NlcnZlclN0",
-            "cmVhbWluZ1Jlc3BvbnNlMncKFlNlcnZlclN0cmVhbWluZ1NlcnZpY2USXQoM",
-            "U2VydmVyU3RyZWFtEiQuU2VydmVyU3RyZWFtLlNlcnZlclN0cmVhbWluZ1Jl",
-            "cXVlc3QaJS5TZXJ2ZXJTdHJlYW0uU2VydmVyU3RyZWFtaW5nUmVzcG9uc2Ui",
-            "AGIGcHJvdG8z"));
+            "ChVTZXJ2ZXJTdHJlYW1pbmcucHJvdG8SDFNlcnZlclN0cmVhbSI2Cg9TZXJ2",
+            "ZXJTdHJlYW1Nc2cSEQoJRmlyc3ROYW1lGAEgASgJEhAKCExhc3ROYW1lGAIg",
+            "ASgJIkcKFlNlcnZlclN0cmVhbWluZ1JlcXVlc3QSLQoGc3RyZWFtGAEgASgL",
+            "Mh0uU2VydmVyU3RyZWFtLlNlcnZlclN0cmVhbU1zZyIxChdTZXJ2ZXJTdHJl",
+            "YW1pbmdSZXNwb25zZRIWCg5TZXJ2ZXJSZXNwb25zZRgBIAEoCTJ5ChZTZXJ2",
+            "ZXJTdHJlYW1pbmdTZXJ2aWNlEl8KDFNlcnZlclN0cmVhbRIkLlNlcnZlclN0",
+            "cmVhbS5TZXJ2ZXJTdHJlYW1pbmdSZXF1ZXN0GiUuU2VydmVyU3RyZWFtLlNl",
+            "cnZlclN0cmVhbWluZ1Jlc3BvbnNlIgAwAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ServerStream.ServerStream), global::ServerStream.ServerStream.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ServerStream.ServerStreamMsg), global::ServerStream.ServerStreamMsg.Parser, new[]{ "FirstName", "LastName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ServerStream.ServerStreamingRequest), global::ServerStream.ServerStreamingRequest.Parser, new[]{ "Stream" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ServerStream.ServerStreamingResponse), global::ServerStream.ServerStreamingResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::ServerStream.ServerStreamingResponse), global::ServerStream.ServerStreamingResponse.Parser, new[]{ "ServerResponse" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class ServerStream : pb::IMessage<ServerStream> {
-    private static readonly pb::MessageParser<ServerStream> _parser = new pb::MessageParser<ServerStream>(() => new ServerStream());
+  public sealed partial class ServerStreamMsg : pb::IMessage<ServerStreamMsg> {
+    private static readonly pb::MessageParser<ServerStreamMsg> _parser = new pb::MessageParser<ServerStreamMsg>(() => new ServerStreamMsg());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ServerStream> Parser { get { return _parser; } }
+    public static pb::MessageParser<ServerStreamMsg> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -60,41 +61,69 @@ namespace ServerStream {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ServerStream() {
+    public ServerStreamMsg() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ServerStream(ServerStream other) : this() {
+    public ServerStreamMsg(ServerStreamMsg other) : this() {
+      firstName_ = other.firstName_;
+      lastName_ = other.lastName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ServerStream Clone() {
-      return new ServerStream(this);
+    public ServerStreamMsg Clone() {
+      return new ServerStreamMsg(this);
+    }
+
+    /// <summary>Field number for the "FirstName" field.</summary>
+    public const int FirstNameFieldNumber = 1;
+    private string firstName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FirstName {
+      get { return firstName_; }
+      set {
+        firstName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "LastName" field.</summary>
+    public const int LastNameFieldNumber = 2;
+    private string lastName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string LastName {
+      get { return lastName_; }
+      set {
+        lastName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ServerStream);
+      return Equals(other as ServerStreamMsg);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ServerStream other) {
+    public bool Equals(ServerStreamMsg other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (FirstName != other.FirstName) return false;
+      if (LastName != other.LastName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
+      if (LastName.Length != 0) hash ^= LastName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -108,6 +137,14 @@ namespace ServerStream {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (FirstName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(FirstName);
+      }
+      if (LastName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(LastName);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -116,6 +153,12 @@ namespace ServerStream {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (FirstName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FirstName);
+      }
+      if (LastName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LastName);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -123,9 +166,15 @@ namespace ServerStream {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ServerStream other) {
+    public void MergeFrom(ServerStreamMsg other) {
       if (other == null) {
         return;
+      }
+      if (other.FirstName.Length != 0) {
+        FirstName = other.FirstName;
+      }
+      if (other.LastName.Length != 0) {
+        LastName = other.LastName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -138,6 +187,14 @@ namespace ServerStream {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            FirstName = input.ReadString();
+            break;
+          }
+          case 18: {
+            LastName = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -180,9 +237,9 @@ namespace ServerStream {
 
     /// <summary>Field number for the "stream" field.</summary>
     public const int StreamFieldNumber = 1;
-    private global::ServerStream.ServerStream stream_;
+    private global::ServerStream.ServerStreamMsg stream_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::ServerStream.ServerStream Stream {
+    public global::ServerStream.ServerStreamMsg Stream {
       get { return stream_; }
       set {
         stream_ = value;
@@ -251,7 +308,7 @@ namespace ServerStream {
       }
       if (other.stream_ != null) {
         if (stream_ == null) {
-          Stream = new global::ServerStream.ServerStream();
+          Stream = new global::ServerStream.ServerStreamMsg();
         }
         Stream.MergeFrom(other.Stream);
       }
@@ -268,7 +325,7 @@ namespace ServerStream {
             break;
           case 10: {
             if (stream_ == null) {
-              Stream = new global::ServerStream.ServerStream();
+              Stream = new global::ServerStream.ServerStreamMsg();
             }
             input.ReadMessage(Stream);
             break;
@@ -304,12 +361,24 @@ namespace ServerStream {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ServerStreamingResponse(ServerStreamingResponse other) : this() {
+      serverResponse_ = other.serverResponse_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ServerStreamingResponse Clone() {
       return new ServerStreamingResponse(this);
+    }
+
+    /// <summary>Field number for the "ServerResponse" field.</summary>
+    public const int ServerResponseFieldNumber = 1;
+    private string serverResponse_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ServerResponse {
+      get { return serverResponse_; }
+      set {
+        serverResponse_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -325,12 +394,14 @@ namespace ServerStream {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ServerResponse != other.ServerResponse) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (ServerResponse.Length != 0) hash ^= ServerResponse.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -344,6 +415,10 @@ namespace ServerStream {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (ServerResponse.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ServerResponse);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -352,6 +427,9 @@ namespace ServerStream {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (ServerResponse.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ServerResponse);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -362,6 +440,9 @@ namespace ServerStream {
     public void MergeFrom(ServerStreamingResponse other) {
       if (other == null) {
         return;
+      }
+      if (other.ServerResponse.Length != 0) {
+        ServerResponse = other.ServerResponse;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -374,6 +455,10 @@ namespace ServerStream {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            ServerResponse = input.ReadString();
+            break;
+          }
         }
       }
     }
