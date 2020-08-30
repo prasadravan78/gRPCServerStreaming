@@ -30,3 +30,4 @@ C:\Users\ravan\Documents\Learnings\gRPC\Code\gRPCServerStreaming\gRPC_Server_Str
 C:\Users\ravan\Documents\Learnings\gRPC\Code\gRPCServerStreaming\gRPC_Server_Streaming_Client\obj\Debug\netcoreapp3.1\gRPC_Server_Streaming_Client.dll
 C:\Users\ravan\Documents\Learnings\gRPC\Code\gRPCServerStreaming\gRPC_Server_Streaming_Client\obj\Debug\netcoreapp3.1\gRPC_Server_Streaming_Client.pdb
 C:\Users\ravan\Documents\Learnings\gRPC\Code\gRPCServerStreaming\gRPC_Server_Streaming_Client\obj\Debug\netcoreapp3.1\gRPC_Server_Streaming_Client.genruntimeconfig.cache
+C:\Users\ravan\Documents\Learnings\gRPC\Code\gRPCServerStreaming\gRPC_Server_Streaming_Client\obj\Debug\netcoreapp3.1\gRPC_Server_Streaming_Client.csprojAssemblyReference.cache

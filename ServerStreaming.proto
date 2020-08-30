@@ -10,12 +10,12 @@ message ServerStreamMsg
 
 message ServerStreamingRequest
 {
-	ServerStreamMsg stream=1;
+	ServerStreamMsg stream = 1;
 }
 
 message ServerStreamingResponse
 {
-	string ServerResponse=1;
+	string ServerResponse = 1;
 }
 
 service ServerStreamingService
